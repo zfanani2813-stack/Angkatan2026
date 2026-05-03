@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan SMKN 2 Gerung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0f172a;
+            --primary-accent: #fbbf24;
+            --secondary-accent: #10b981;
+            --glass-bg: rgba(15, 23, 42, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at 0% 0%, #1e293b 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, #0f172a 0%, transparent 50%),
+                        #020617;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px; /* Reduced padding for mobile */
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: var(--primary-accent);
+            filter: blur(150px);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.05;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px) saturate(150%);
+            -webkit-backdrop-filter: blur(30px) saturate(150%);
+            border: 1px solid var(--glass-border);
+            border-radius: 40px;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
+            width: 100%;
+        }
+
+        .input-glass {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .input-glass:focus {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+        }
+
+        .btn-action {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            color: #0f172a;
+            transition: all 0.3s ease;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(217, 119, 6, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .neon-text-gold {
+            color: #fff;
+            text-shadow: 0 0 7px rgba(251, 191, 36, 0.3), 0 0 42px #fbbf24;
+            animation: flicker-gold 2s infinite alternate;
+        }
+
+        .neon-text-green {
+            color: #fff;
+            text-shadow: 0 0 7px rgba(16, 185, 129, 0.3), 0 0 42px #10b981;
+            animation: flicker-green 1.5s infinite alternate;
+        }
+
+        @keyframes flicker-gold {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% { text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 40px #fbbf24, 0 0 80px #fbbf24; }
+            20%, 24%, 55% { text-shadow: none; }
+        }
+
+        @keyframes flicker-green {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 40px #10b981, 0 0 80px #10b981; }
+            20%, 24%, 55% { text-shadow: none; }
+        }
+
+        .hidden { display: none; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-appear {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .loader {
+            border: 3px solid rgba(251, 191, 36, 0.1);
+            border-top: 3px solid var(--primary-accent);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            flex: 1; /* Make items equal width */
+            padding: 12px 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 0; /* Prevents overflow in flex */
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow" style="top: -10%; left: -10%;"></div>
+    <div class="bg-glow" style="bottom: -10%; right: -10%;"></div>
+
+    <div class="w-full max-w-md z-10 mx-auto">
+        <!-- Header Section -->
+        <div class="text-center mb-8 animate-appear">
+            <div class="relative inline-block mb-3">
+                <div class="absolute inset-0 bg-yellow-400 blur-3xl opacity-10 rounded-full"></div>
+                <img src="https://smkn2gerung.sch.id/images/0/24694816/cropped-SMKN_2_GERUNG-removebg-preview-pdVBek1OipaMi3fw7laoxA.png" 
+                     alt="Logo SMKN 2 Gerung" 
+                     class="relative w-24 md:w-28 h-auto mx-auto drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
+            </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-white uppercase mb-1">SMKN 2 GERUNG</h1>
+            <div class="flex items-center justify-center space-x-3">
+                <span class="h-[1.5px] w-5 bg-yellow-500/50"></span>
+                <p class="text-yellow-500 text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase">UNIK dan BERSAHAJA</p>
+                <span class="h-[1.5px] w-5 bg-yellow-500/50"></span>
+            </div>
+        </div>
+
+        <!-- Countdown Section -->
+        <div id="countdown-section" class="glass-card p-6 md:p-10 text-center animate-appear hidden" style="animation-delay: 0.2s">
+            <h2 class="text-xl md:text-2xl font-bold mb-2 text-white">Segera Dibuka</h2>
+            <p class="text-slate-400 text-xs md:text-sm mb-8 leading-relaxed font-light italic">Hasil pengumuman kelulusan akan dapat diakses dalam:</p>
+            
+            <!-- Grid Container for perfect centering on mobile -->
+            <div class="grid grid-cols-4 gap-2 md:gap-3 mb-8 w-full">
+                <div class="countdown-item">
+                    <span id="days" class="text-xl md:text-2xl font-black text-yellow-500">00</span>
+                    <span class="text-[8px] md:text-[9px] uppercase tracking-widest text-slate-500 mt-1">Hari</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours" class="text-xl md:text-2xl font-black text-yellow-500">00</span>
+                    <span class="text-[8px] md:text-[9px] uppercase tracking-widest text-slate-500 mt-1">Jam</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="text-xl md:text-2xl font-black text-yellow-500">00</span>
+                    <span class="text-[8px] md:text-[9px] uppercase tracking-widest text-slate-500 mt-1">Menit</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="text-xl md:text-2xl font-black text-yellow-500">00</span>
+                    <span class="text-[8px] md:text-[9px] uppercase tracking-widest text-slate-500 mt-1">Detik</span>
+                </div>
+            </div>
+
+            <p class="text-[9px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest border-t border-white/5 pt-6">Jadwal Rilis: 5 Mei 2026, 00:00 WITA</p>
+        </div>
+
+        <!-- Login Section -->
+        <div id="login-section" class="glass-card p-8 md:p-10 text-center animate-appear hidden" style="animation-delay: 0.2s">
+            <h2 class="text-2xl font-bold mb-1 text-white">Portal Kelulusan</h2>
+            <p class="text-slate-400 text-sm mb-8 leading-relaxed font-light">Masukkan 10 digit NISN resmi Anda untuk mengakses hasil evaluasi kelulusan TA 2025/2026.</p>
+            
+            <div class="space-y-6 text-left">
+                <div class="group">
+                    <label class="block text-[12px] font-bold uppercase tracking-[0.15em] text-yellow-500 mb-2 ml-1">Silahkan isi dengan NISN</label>
+                    <input type="text" id="nisn-input" inputmode="numeric" placeholder="Contoh: 0061234567" 
+                           class="w-full p-4 md:p-5 rounded-3xl input-glass outline-none text-white font-semibold placeholder:text-slate-600 text-lg">
+                </div>
+                
+                <button onclick="checkStatus()" id="btn-check" class="w-full py-4 md:py-5 rounded-3xl font-black btn-action flex items-center justify-center space-x-3 text-sm uppercase tracking-widest shadow-xl">
+                    <span>Lihat Hasil</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </div>
+            <div id="error-msg" class="mt-6 text-red-400 text-xs hidden bg-red-500/5 py-4 px-6 rounded-2xl border border-red-500/10">
+                Informasi NISN tidak ditemukan dalam basis data sekolah.
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result-section" class="glass-card p-6 md:p-8 text-center hidden">
+            <p class="text-slate-300 text-[10px] md:text-[11px] leading-relaxed max-w-[320px] mx-auto font-semibold italic opacity-90 uppercase tracking-wide mb-6">
+                Berdasarkan hasil rapat pleno kelulusan siswa Kelas XII Angkatan 2026, dengan ini ditetapkan bahwa:
+            </p>
+
+            <div class="mb-4">
+                <h2 class="text-[10px] md:text-[11px] font-bold text-emerald-400 uppercase tracking-[0.3em] mb-1">Selamat Kepada</h2>
+                <p id="student-name" class="text-2xl md:text-3xl font-black leading-tight uppercase mb-0.5 neon-text-gold"></p>
+                <p id="student-major" class="text-sm md:text-base text-yellow-500 font-semibold italic"></p>
+            </div>
+
+            <div class="space-y-4 mb-6">
+                <div class="bg-emerald-500/5 rounded-[28px] md:rounded-[32px] p-5 md:p-6 border border-emerald-500/20 shadow-inner">
+                    <p class="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-emerald-500/60 font-bold mb-1">Status Akademik</p>
+                    <p class="text-5xl md:text-6xl font-black neon-text-green">LULUS</p>
+                </div>
+                <div class="bg-white/5 rounded-[28px] md:rounded-[32px] p-5 border border-white/10 flex flex-col items-center">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
+                        <p class="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-slate-400">Informasi Pengambilan SKL</p>
+                    </div>
+                    <p class="text-xs md:text-sm text-slate-200 leading-relaxed font-medium">
+                        Surat Keterangan Lulus bisa diambil disekolah pada: <br>
+                        <span class="text-white font-bold text-lg md:text-xl mt-1 block">9 Mei 2026</span>
+                    </p>
+                </div>
+            </div>
+
+            <button onclick="resetApp()" class="text-[10px] font-bold text-slate-500 hover:text-white transition-all uppercase tracking-[0.3em] py-2">
+                Kembali
+            </button>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading" class="fixed inset-0 flex items-center justify-center bg-slate-950/90 backdrop-blur-xl hidden z-50">
+            <div class="flex flex-col items-center">
+                <div class="loader mb-6"></div>
+                <p class="text-yellow-500 font-bold tracking-[0.5em] text-[10px] animate-pulse">SINKRONISASI DATA</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVGLufTAvbZ4WbNmHA513UfO-pD8okUVhXY_AaOxvQzxJXFfSnq3gUdqWoe2raIyHlgKNkG855LYFs/pub?gid=0&single=true&output=csv";
+        
+        // TARGET: 5 Mei 2026, 00:00 WITA (UTC+8)
+        const RELEASE_DATE = new Date("2026-05-05T00:00:00+08:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = RELEASE_DATE - now;
+
+            if (distance <= 0) {
+                document.getElementById('countdown-section').classList.add('hidden');
+                document.getElementById('login-section').classList.remove('hidden');
+                return true; 
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            
+            document.getElementById('countdown-section').classList.remove('hidden');
+            document.getElementById('login-section').classList.add('hidden');
+            return false;
+        }
+
+        const timer = setInterval(() => {
+            if (updateCountdown()) clearInterval(timer);
+        }, 1000);
+
+        // Run immediately
+        updateCountdown();
+
+        async function checkStatus() {
+            const nisnInput = document.getElementById('nisn-input').value.trim();
+            const errorMsg = document.getElementById('error-msg');
+            const loading = document.getElementById('loading');
+            
+            if (!nisnInput) return;
+
+            loading.classList.remove('hidden');
+            errorMsg.classList.add('hidden');
+
+            try {
+                const response = await fetch(SHEET_URL);
+                const data = await response.text();
+                const rows = data.split(/\r?\n/).map(row => row.split(','));
+                const student = rows.find(row => row[0] && row[0].trim() === nisnInput);
+
+                if (student) {
+                    displayResult({
+                        nama: student[1] ? student[1].trim() : "Siswa",
+                        jurusan: student[2] ? student[2].trim() : "Jurusan"
+                    });
+                } else {
+                    errorMsg.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                errorMsg.classList.remove('hidden');
+            } finally {
+                loading.classList.add('hidden');
+            }
+        }
+
+        function displayResult(data) {
+            document.getElementById('login-section').classList.add('hidden');
+            document.getElementById('result-section').classList.remove('hidden');
+            document.getElementById('result-section').classList.add('animate-appear');
+            
+            document.getElementById('student-name').innerText = data.nama;
+            document.getElementById('student-major').innerText = data.jurusan;
+        }
+
+        function resetApp() {
+            document.getElementById('nisn-input').value = "";
+            document.getElementById('login-section').classList.remove('hidden');
+            document.getElementById('result-section').classList.add('hidden');
+            document.getElementById('error-msg').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
